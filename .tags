@@ -1,0 +1,11 @@
+html	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<html>$/;"	function	line:2
+body	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<body>$/;"	function	line:3
+div	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<div id='container'><\/div>$/;"	function	line:6
+link	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<link rel='stylesheet' href='spectrum.css' \/>$/;"	function	line:8
+script	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<script src="https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/jquery\/3.2.1\/jquery.min.js"><\/script>$/;"	function	line:11
+script	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<script src='spectrum.js'><\/script>$/;"	function	line:12
+script	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<script>$/;"	function	line:13
+getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^function getRandomColor() {$/;"	function	line:15
+clrBuf	/Users/smusso/Dropbox/projects/theme-builder/server.js	/^var clrBuf = fs.readFileSync('colors.txt', "utf8");$/;"	variable	line:7
+clrArr	/Users/smusso/Dropbox/projects/theme-builder/server.js	/^var clrArr = clrBuf.split("\\n");$/;"	variable	line:9
+colors	/Users/smusso/Dropbox/projects/theme-builder/server.js	/^var colors = [$/;"	variable	line:17

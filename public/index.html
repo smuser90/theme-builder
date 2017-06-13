@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<div id='container'></div>
+
+<link rel='stylesheet' href='spectrum.css' />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='spectrum.js'></script>
+<script>
+
+function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++ ) {
+          color += letters[Math.floor(Math.random() * 16)];
+      }
+      console.log(color);
+      return color;
+  }
+
+  $( document ).ready( function() {
+
+    $.get( "/colors", function( data ){
+
+      for(var i = 0; i < data.length; i++){
+        var div = $("<div>", {id: "parent-color"+i})
+        var clr = $("<input>", {id: "color"+i});
+        var dsc = $("<span>", {id: "description"+i})
+
+        $("#container").append(div);
+
+        $("#parent-color"+i).append(clr);
+        $("#parent-color"+i).append(dsc);
+
+        var rdmColor = "#"+data[i][0]+data[i][1]+data[i][2];
+        $("#description"+i).text("    Color: "+rdmColor);
+
+        $('#color'+i).spectrum({
+          color: rdmColor
+        });
+      }
+    })
+
+  });
+</script>
+</body>
+</html>
