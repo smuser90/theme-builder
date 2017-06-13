@@ -20,7 +20,13 @@ function getRandomColor() {
       }
       console.log(color);
       return color;
-  }
+}
+
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
 
   $( document ).ready( function() {
 
@@ -36,7 +42,10 @@ function getRandomColor() {
         $("#parent-color"+i).append(clr);
         $("#parent-color"+i).append(dsc);
 
-        var rdmColor = "#"+data[i][0]+data[i][1]+data[i][2];
+        var d1 = pad((Number.parseInt(data[i][0])).toString(16), 2);
+        var d2 = pad((Number.parseInt(data[i][1])).toString(16), 2);
+        var d3 = pad((Number.parseInt(data[i][2])).toString(16), 2);
+        var rdmColor = "#"+d1+d2+d3;
         $("#description"+i).text("    Color: "+rdmColor);
 
         $('#color'+i).spectrum({
@@ -44,6 +53,7 @@ function getRandomColor() {
         });
       }
     })
+
 
   });
 </script>

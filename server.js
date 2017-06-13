@@ -23,11 +23,13 @@ for(clr in clrArr){
 
 app.get('/colors', function (req, res) {
 
-  colors = [];
+  //colors = [];
 
-  for(var i = 0; i < 20; i++){
-    colors.push(getRandomColor());
-  }
+  //for(var i = 0; i < 20; i++){
+  //  colors.push(getRandomColor());
+  //}
+
+ 	console.dir(colors);
 
   var sortedRgbArr = colors.map(function(c, i) {
     // Convert to HSL and keep track of original indices
@@ -40,6 +42,8 @@ app.get('/colors', function (req, res) {
     return colors[data.index];
   });
 
+
+	console.dir(sortedRgbArr);
       res.send(sortedRgbArr)
 
 });
@@ -54,7 +58,7 @@ app.listen(3000, function () {
 });
 
 function rgbToHsl(c) {
-  var r = Number.parseInt(c[0], 16)/255, g = Number.parseInt(c[1]/255), b = Number.parseInt(c[2]/255);
+  var r = Number.parseInt(c[0])/255, g = Number.parseInt(c[1])/255, b = Number.parseInt(c[2])/255;
   var max = Math.max(r, g, b), min = Math.min(r, g, b);
   var h, s, l = (max + min) / 2;
 
@@ -86,7 +90,7 @@ function getRandomColor() {
 function extractColorFromTag(tag){
   var arr = tag.split(",");
   var red = arr[0].replace("rgba(","").trim();
-  var green = arr[1];
-  var blue = arr[2].replace(");","").trim();
+  var green = arr[1].trim();
+  var blue = arr[2].trim();
   return [red, green, blue];
 }
