@@ -7,7 +7,7 @@
 html	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<html>$/;"	function	line:2
 body	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<body style="background-color: black;">$/;"	function	line:3
 div	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<div >$/;"	function	line:5
-div	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^  <div style = 'background-color: black; color: #3D8EC9; width: 50%; margin: 0 auto; padding-bottom: 30px;'>$/;"	function	line:6
+div	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^  <div style = 'background-color: black; color: #3D8EC9; width: 50%; margin: 0 auto; padding-bottom: 30px;' class='t8-center'>$/;"	function	line:6
 button	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^    <button style="margin-right: 100px;">Import<\/button>$/;"	function	line:7
 button	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^    <button style="">Reset<\/button>$/;"	function	line:8
 button	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^    <button style="margin-left: 100px;">Export<\/button>$/;"	function	line:9

@@ -19,12 +19,15 @@ for(clr in clrArr){
     }
 }
 
+colors.sort();
+
 app.get('/colors', function (req, res) {
 
   var sortedRgbArr = colors.map(function(c, i) {
     return {color: rgbToHsl(c), index: i};
   }).sort(function(c1, c2) {
-    return c1.color[0] - c2.color[0];
+    //return (c1.color[0] - c2.color[0])+(c1.color[1] - c2.color[1]);
+    return ((c2.color[0] - c1.color[0]) + (c2.color[1] - c1.color[1]));
   }).map(function(data) {
     return colors[data.index];
   });
