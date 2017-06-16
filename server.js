@@ -23,28 +23,15 @@ for(clr in clrArr){
 
 app.get('/colors', function (req, res) {
 
-  //colors = [];
-
-  //for(var i = 0; i < 20; i++){
-  //  colors.push(getRandomColor());
-  //}
-
- 	console.dir(colors);
-
   var sortedRgbArr = colors.map(function(c, i) {
-    // Convert to HSL and keep track of original indices
     return {color: rgbToHsl(c), index: i};
   }).sort(function(c1, c2) {
-    // Sort by hue
     return c1.color[0] - c2.color[0];
   }).map(function(data) {
-    // Retrieve original RGB color
     return colors[data.index];
   });
 
-
-	console.dir(sortedRgbArr);
-      res.send(sortedRgbArr)
+  res.send(sortedRgbArr)
 
 });
 
@@ -53,8 +40,7 @@ app.get('/', function (req, res){
 });
 
 app.listen(3000, function () {
-      console.log('Example app listening on port 3000!')
-
+      console.log('listening {port: 3000}')
 });
 
 function rgbToHsl(c) {
@@ -83,7 +69,6 @@ function getRandomColor() {
       for (var i = 0; i < 3; i++ ) {
           color.push(letters[Math.floor(Math.random() * 16)] + letters[Math.floor(Math.random() * 16)]);
       }
-      console.log(color);
       return color;
   }
 

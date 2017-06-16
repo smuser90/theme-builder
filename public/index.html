@@ -2,14 +2,14 @@
 <html>
 <body>
 
-
 <div id='container'></div>
 
 <link rel='stylesheet' href='spectrum.css' />
-
+<link rel='stylesheet' href='styles.css' />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src='spectrum.js'></script>
+
 <script>
 
 function getRandomColor() {
@@ -18,7 +18,6 @@ function getRandomColor() {
       for (var i = 0; i < 6; i++ ) {
           color += letters[Math.floor(Math.random() * 16)];
       }
-      console.log(color);
       return color;
 }
 
@@ -32,12 +31,18 @@ function pad(num, size) {
 
     $.get( "/colors", function( data ){
 
+      var layout = $("<div styles='width: 50%;'>", {});
       for(var i = 0; i < data.length; i++){
-        var div = $("<div>", {id: "parent-color"+i})
+        var div = $("<div>", {id: "parent-color"+i, class: "t8-center"});
         var clr = $("<input>", {id: "color"+i});
-        var dsc = $("<span>", {id: "description"+i})
+        var dsc = $("<span>", {id: "description"+i, class: "t8-label"});
 
-        $("#container").append(div);
+        if(i % 20 == 0){
+          layout = $("<div styles='width: 50%;'>", {});
+          $("#container").append(layout);
+        }
+
+        $("#layout").append(div);
 
         $("#parent-color"+i).append(clr);
         $("#parent-color"+i).append(dsc);
@@ -45,7 +50,9 @@ function pad(num, size) {
         var d1 = pad((Number.parseInt(data[i][0])).toString(16), 2);
         var d2 = pad((Number.parseInt(data[i][1])).toString(16), 2);
         var d3 = pad((Number.parseInt(data[i][2])).toString(16), 2);
+
         var rdmColor = "#"+d1+d2+d3;
+
         $("#description"+i).text("    Color: "+rdmColor);
 
         $('#color'+i).spectrum({
@@ -53,8 +60,6 @@ function pad(num, size) {
         });
       }
     })
-
-
   });
 </script>
 </body>
