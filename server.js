@@ -8,7 +8,11 @@ var clrBuf = fs.readFileSync('colors.txt', "utf8");
 
 var clrArr = clrBuf.split("\n");
 
+
+var vars = [];
+
 var colors = [];
+
 
 for(clr in clrArr){
     var pair = clrArr[clr].split(":");
@@ -16,6 +20,7 @@ for(clr in clrArr){
     //console.log(pair[1]);
     if(pair[1]){
       colors.push(extractColorFromTag(pair[1]));
+	vars.push(pair[0]);
     }
 }
 
@@ -34,6 +39,10 @@ app.get('/colors', function (req, res) {
 
   res.send(sortedRgbArr)
 
+});
+
+app.get('/vars', function(req, res){
+    res.send(vars);
 });
 
 app.get('/', function (req, res){
