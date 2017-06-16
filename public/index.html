@@ -69,14 +69,11 @@ var createColor = function(data, vars, i){
   $("#layout"+l).append(div);
 
   $("#parent-color"+i).append(clr);
-  //$("#parent-color"+i).append(vars);
   $("#parent-color"+i).append(dsc);
 
   $("#description"+i).text("Color: "+rdmColor+"\n\n\n"+vars[i]);
-  //$("#variable"+i).text(vars[i]);
 
   $("#description"+i).css({'color': invert(rdmColor)});
-  //$("#variable"+i).css({'color': invert(rdmColor)});
 
   $('#color'+i).spectrum({
     move: function(color){

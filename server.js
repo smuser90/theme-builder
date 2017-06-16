@@ -8,45 +8,40 @@ var clrBuf = fs.readFileSync('colors.txt', "utf8");
 
 var clrArr = clrBuf.split("\n");
 
-
 var vars = [];
-
 var colors = [];
 
+var sortedVars = [];
 
 for(clr in clrArr){
     var pair = clrArr[clr].split(":");
-    //console.log(pair[0]);
-    //console.log(pair[1]);
     if(pair[1]){
       colors.push(extractColorFromTag(pair[1]));
 	vars.push(pair[0]);
     }
 }
 
+var sortedRgbArr = colors.map(function(c, i) {
+  return {color: rgbToHsl(c), index: i};
+}).sort(function(c1, c2) {
+  return ((c2.color[0] - c1.color[0]) + (c2.color[1] - c1.color[1]));
+}).map(function(data) {
+  sortedVars.push(vars[data.index]);
+  return colors[data.index];
+});
+
 colors.sort();
 
 app.get('/colors', function (req, res) {
-
-  var sortedRgbArr = colors.map(function(c, i) {
-    return {color: rgbToHsl(c), index: i};
-  }).sort(function(c1, c2) {
-    //return (c1.color[0] - c2.color[0])+(c1.color[1] - c2.color[1]);
-    return ((c2.color[0] - c1.color[0]) + (c2.color[1] - c1.color[1]));
-  }).map(function(data) {
-    return colors[data.index];
-  });
-
-  res.send(sortedRgbArr)
-
+  res.send(sortedRgbArr);
 });
 
 app.get('/vars', function(req, res){
-    res.send(vars);
+    res.send(sortedVars);
 });
 
 app.get('/', function (req, res){
-    res.send()
+    res.send();
 });
 
 app.listen(3000, function () {
