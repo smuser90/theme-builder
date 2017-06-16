@@ -1,11 +1,21 @@
 .t8-center{
-  background-color: #3D8EC9;
+  background-color: white;
   text-align: center;
+  font-weight: bold;
 }
 
 
 .t8-label{
-  background-color: #3D8EC9;
-  color: white;
+  color: #1f2228;
   text-align: center;
+  font-weight: bold;
+}
+
+.t8-column{
+  float: left;
+  width: 14%;
+}
+
+.t8-colorPicker{
+  padding: 10px 10px 10px 10px;
 }

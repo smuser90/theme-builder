@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body style="background-color: black;">
 
-<div id='container'></div>
+<div >
+  <div style = 'background-color: black; color: #3D8EC9; width: 50%; margin: 0 auto; padding-bottom: 30px;'>
+    <button style="margin-right: 100px;">Import</button>
+    <button style="">Reset</button>
+    <button style="margin-left: 100px;">Export</button>
+  </div>
+  <div id='container' style="display: table; margin: 0 auto;"></div>
+</div>
 
 <link rel='stylesheet' href='spectrum.css' />
 <link rel='stylesheet' href='styles.css' />
@@ -30,32 +37,48 @@ function pad(num, size) {
   $( document ).ready( function() {
 
     $.get( "/colors", function( data ){
+      var l = 0;
+      var layout = $("<div>", {id: "layout"+l, class: "t8-column"});
 
-      var layout = $("<div styles='width: 50%;'>", {});
       for(var i = 0; i < data.length; i++){
-        var div = $("<div>", {id: "parent-color"+i, class: "t8-center"});
+        var d1 = pad((
+            Number.parseInt(data[i][0]
+          )).toString(16), 2);
+        var d2 = pad((
+            Number.parseInt(data[i][1]
+          )).toString(16), 2);
+        var d3 = pad((
+            Number.parseInt(data[i][2]
+          )).toString(16), 2);
+
+        var rdmColor = "#"+d1+d2+d3;
+
+        var div = $("<div>", {id: "parent-color"+i, style: "background-color: "+rdmColor,class: "t8-colorPicker t8-center"});
         var clr = $("<input>", {id: "color"+i});
-        var dsc = $("<span>", {id: "description"+i, class: "t8-label"});
+        var dsc = $("<div>", {id: "description"+i, class: "t8-label"});
 
         if(i % 20 == 0){
-          layout = $("<div styles='width: 50%;'>", {});
+          l++;
+          layout = $("<div>", {id: "layout"+l, class: "t8-column"});
           $("#container").append(layout);
         }
 
-        $("#layout").append(div);
+        $("#layout"+l).append(div);
 
         $("#parent-color"+i).append(clr);
         $("#parent-color"+i).append(dsc);
 
-        var d1 = pad((Number.parseInt(data[i][0])).toString(16), 2);
-        var d2 = pad((Number.parseInt(data[i][1])).toString(16), 2);
-        var d3 = pad((Number.parseInt(data[i][2])).toString(16), 2);
-
-        var rdmColor = "#"+d1+d2+d3;
-
         $("#description"+i).text("    Color: "+rdmColor);
 
         $('#color'+i).spectrum({
+          move: function(color){
+            var clr = '#'+Math.floor(color._r).toString(16)+Math.floor(color._g).toString(16)+Math.floor(color._b).toString(16);
+            console.log(clr);
+            console.log('#parent-color0');
+            $('#parent-color'+i).css({'background-color': clr});
+          },
+          preferredFormat: "rgb",
+          showInput: true,
           color: rdmColor
         });
       }

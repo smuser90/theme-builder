@@ -19,8 +19,6 @@ for(clr in clrArr){
     }
 }
 
-
-
 app.get('/colors', function (req, res) {
 
   var sortedRgbArr = colors.map(function(c, i) {
