@@ -14,8 +14,9 @@
 <link rel='stylesheet' href='spectrum.css' />
 <link rel='stylesheet' href='styles.css' />
 
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" type="text/css" media="all" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src='spectrum.js'></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script><script src='spectrum.js'></script>
 
 <script>
 
@@ -67,6 +68,10 @@ var createColor = function(data, vars, i){
   }
 
   $("#layout"+l).append(div);
+
+  $("#parent-color"+i).draggable({
+    snap: true
+  });
 
   $("#parent-color"+i).append(clr);
   $("#parent-color"+i).append(dsc);
