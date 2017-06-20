@@ -1,0 +1,105 @@
+
+var l = 0;
+var layout = $("<div>", {id: "layout"+l, class: "t8-column"});
+
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+function invert(rgbOriginal) {
+    rgb = [
+      Number.parseInt(rgbOriginal.substring(1,3), 16),
+      Number.parseInt(rgbOriginal.substring(3,5), 16),
+      Number.parseInt(rgbOriginal.substring(5,7), 16),
+      ];
+
+    for (var i = 0; i < rgb.length; i++) rgb[i] = (i === 3 ? 1 : 255) - rgb[i];
+    return rgbToHex(rgb[0], rgb[1], rgb[2]);
+}
+
+var zIndex = 3;
+var createColor = function(data, vars, i){
+  var d1 = pad((
+      Number.parseInt(data[i][0]
+    )).toString(16), 2);
+  var d2 = pad((
+      Number.parseInt(data[i][1]
+    )).toString(16), 2);
+  var d3 = pad((
+      Number.parseInt(data[i][2]
+    )).toString(16), 2);
+
+  var rdmColor = "#"+d1+d2+d3;
+
+  var div = $("<div>", {id: "parent-color"+i, style: "background-color: "+rdmColor, class: "t8-colorPicker t8-center"});
+  var clr = $("<input>", {id: "color"+i});
+  var dsc = $("<div>", {id: "description"+i, class: "t8-label"});
+  var triangle = $("<div>", {id: "triangle"+i, class: "arrow-left"});
+  //var vars = $("<span>", {id: "variable"+i});
+
+  if(i % 20 == 0){
+    l++;
+    layout = $("<div>", {id: "layout"+l, class: "t8-column"});
+    $("#container").append(layout);
+  }
+
+  $("#layout"+l).append(div);
+
+  $("#parent-color"+i).draggable({
+    snap: true
+  });
+
+  $("#parent-color"+i).append(triangle);
+  $("#parent-color"+i).append(clr);
+  $("#parent-color"+i).append(dsc);
+
+  $("#description"+i).text("Color: "+rdmColor+"\n\n\n"+vars[i]);
+
+  $("#description"+i).css({'color': invert(rdmColor)});
+
+  $('#color'+i).spectrum({
+    move: function(color){
+      var index = i;
+      var clr = '#'+Math.floor(color._r).toString(16)+Math.floor(color._g).toString(16)+Math.floor(color._b).toString(16);
+      console.log(clr);
+      console.log('#parent-color'+index);
+      $('#parent-color'+index).css({'background-color': clr});
+    },
+    start: function(event, ui) { $(this).css("z-index", zIndex++); },
+    preferredFormat: "rgb",
+    showInput: true,
+    color: rdmColor
+  });
+};
+
+function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++ ) {
+          color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+}
+
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
+
+$( document ).ready( function() {
+
+  $.get( "/colors", function( data ){
+    $.get( "/vars", function( vars ){
+
+      for(var i = 0; i < data.length; i++){
+          createColor(data, vars, i);
+      }
+    })
+  })
+});

@@ -19,3 +19,25 @@
 .t8-colorPicker{
   padding: 10px 10px 10px 10px;
 }
+
+#wrapper {
+  margin-left: 100px;
+}
+#container {
+  float: right;
+  width: 100%;
+}
+#workspace {
+  float: left;
+  width: 100px;
+  margin-left: -100px;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+
+  border-right:10px solid blue;
+}
