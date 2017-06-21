@@ -4,40 +4,41 @@
   font-weight: bold;
 }
 
-
 .t8-label{
   color: #1f2228;
   text-align: center;
   font-weight: bold;
+  font-size: 0.3em;
 }
 
 .t8-column{
   float: left;
-  width: 14%;
+  width: 10%;
 }
 
 .t8-colorPicker{
-  padding: 10px 10px 10px 10px;
+  border: 1px solid black;
 }
 
 #wrapper {
   margin-left: 100px;
 }
+
 #container {
   float: right;
   width: 100%;
 }
+
 #workspace {
   float: left;
   width: 100px;
   margin-left: -100px;
 }
 
-.arrow-left {
+.arrow-top {
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-
-  border-right:10px solid blue;
+  border-top: 20% solid blue;
+  border-bottom: 20% solid transparent;
+  border-right: 20% solid transparent;
 }

@@ -13,6 +13,8 @@ var colors = [];
 
 var sortedVars = [];
 
+var secondVars = [];
+
 for(clr in clrArr){
     var pair = clrArr[clr].split(":");
     if(pair[1]){
@@ -30,14 +32,23 @@ var sortedRgbArr = colors.map(function(c, i) {
   return colors[data.index];
 });
 
+var secondSort = sortedRgbArr.map(function(c, i) {
+  return {color: rgbToHsl(c), index: i};
+}).sort(function(c1, c2) {
+  return ((c2.color[0] - c1.color[0]) + (c2.color[1] - c1.color[1]));
+}).map(function(data) {
+  secondVars.push(sortedVars[data.index]);
+  return sortedRgbArr[data.index];
+});
+
 colors.sort();
 
 app.get('/colors', function (req, res) {
-  res.send(sortedRgbArr);
+  res.send(secondSort);
 });
 
 app.get('/vars', function(req, res){
-    res.send(sortedVars);
+    res.send(secondVars);
 });
 
 app.get('/', function (req, res){

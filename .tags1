@@ -14,10 +14,10 @@ invert	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function inv
 invert	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function invert(rgbOriginal) {$/;"	function	line:14
 zIndex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var zIndex = 3;$/;"	variable	line:25
 createColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var createColor = function(data, vars, i){$/;"	function	line:26
-move	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^    move: function(color){$/;"	function	line:66
-start	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^    start: function(event, ui) { $(this).css("z-index", zIndex++); },$/;"	function	line:73
+start	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^    start: function(event, ui) { $(this).css("z-index", zIndex++); }$/;"	function	line:55
+move	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^    move: function(color){$/;"	function	line:72
 createColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var createColor = function(data, vars, i){$/;"	function	line:26
-getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function getRandomColor() {$/;"	function	line:80
-getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function getRandomColor() {$/;"	function	line:80
-pad	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function pad(num, size) {$/;"	function	line:89
-pad	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function pad(num, size) {$/;"	function	line:89
+getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function getRandomColor() {$/;"	function	line:87
+getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function getRandomColor() {$/;"	function	line:87
+pad	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function pad(num, size) {$/;"	function	line:96
+pad	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function pad(num, size) {$/;"	function	line:96

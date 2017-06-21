@@ -39,10 +39,10 @@ var createColor = function(data, vars, i){
   var div = $("<div>", {id: "parent-color"+i, style: "background-color: "+rdmColor, class: "t8-colorPicker t8-center"});
   var clr = $("<input>", {id: "color"+i});
   var dsc = $("<div>", {id: "description"+i, class: "t8-label"});
-  var triangle = $("<div>", {id: "triangle"+i, class: "arrow-left"});
-  //var vars = $("<span>", {id: "variable"+i});
+  var variable = $("<div>", {id: "variable"+i, class: "t8-label"});
+  var triangle = $("<div>", {id: "triangle"+i, class: "arrow-top"});
 
-  if(i % 20 == 0){
+  if(i % 16 == 0){
     l++;
     layout = $("<div>", {id: "layout"+l, class: "t8-column"});
     $("#container").append(layout);
@@ -51,16 +51,22 @@ var createColor = function(data, vars, i){
   $("#layout"+l).append(div);
 
   $("#parent-color"+i).draggable({
-    snap: true
+    grid: [20, 20],
+    start: function(event, ui) { $(this).css("z-index", zIndex++); }
   });
 
   $("#parent-color"+i).append(triangle);
   $("#parent-color"+i).append(clr);
   $("#parent-color"+i).append(dsc);
+  $("#parent-color"+i).append(variable);
 
-  $("#description"+i).text("Color: "+rdmColor+"\n\n\n"+vars[i]);
+  $("#description"+i).text("Color: "+rdmColor);
+  $("#variable"+i).text(vars[i]);
 
   $("#description"+i).css({'color': invert(rdmColor)});
+  $("#variable"+i).css({'color': invert(rdmColor)});
+
+  $("#triangle"+i).css({'border-top': '20% solid'+rdmColor});
 
   $('#color'+i).spectrum({
     move: function(color){
@@ -69,8 +75,9 @@ var createColor = function(data, vars, i){
       console.log(clr);
       console.log('#parent-color'+index);
       $('#parent-color'+index).css({'background-color': clr});
+      $("#description"+index).css({'color': invert(clr)});
     },
-    start: function(event, ui) { $(this).css("z-index", zIndex++); },
+
     preferredFormat: "rgb",
     showInput: true,
     color: rdmColor
