@@ -8,7 +8,8 @@
   color: #1f2228;
   text-align: center;
   font-weight: bold;
-  font-size: 0.3em;
+  padding: 2px;
+  font-size: 0.5em;
 }
 
 .t8-column{
@@ -17,7 +18,7 @@
 }
 
 .t8-colorPicker{
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 #wrapper {
@@ -38,7 +39,9 @@
 .arrow-top {
   width: 0;
   height: 0;
-  border-top: 20% solid blue;
-  border-bottom: 20% solid transparent;
-  border-right: 20% solid transparent;
+  z-index: -1000;
+  margin: 2px;
+  border-top: 30px solid blue;
+  border-bottom: 30px solid transparent;
+  border-right: 30px solid transparent;
 }

@@ -15,14 +15,6 @@ script	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<script 
 script	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<script src="http:\/\/ajax.googleapis.com\/ajax\/libs\/jqueryui\/1.12.1\/jquery-ui.min.js" type="text\/javascript"><\/script>$/;"	function	line:22
 script	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<script src='spectrum.js'><\/script>$/;"	function	line:23
 script	/Users/smusso/Dropbox/projects/theme-builder/public/index.html	/^<script src="app.js"><\/script>$/;"	function	line:24
-.t8-center	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^.t8-center{$/;"	function	line:1
-.t8-label	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^.t8-label{$/;"	function	line:7
-.t8-column	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^.t8-column{$/;"	function	line:14
-.t8-colorPicker	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^.t8-colorPicker{$/;"	function	line:19
-#wrapper	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^#wrapper {$/;"	function	line:23
-#container	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^#container {$/;"	function	line:27
-#workspace	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^#workspace {$/;"	function	line:32
-.arrow-top	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^.arrow-top {$/;"	function	line:38
 clrBuf	/Users/smusso/Dropbox/projects/theme-builder/server.js	/^var clrBuf = fs.readFileSync('colors.txt', "utf8");$/;"	variable	line:7
 clrArr	/Users/smusso/Dropbox/projects/theme-builder/server.js	/^var clrArr = clrBuf.split("\\n");$/;"	variable	line:9
 vars	/Users/smusso/Dropbox/projects/theme-builder/server.js	/^var vars = [];$/;"	variable	line:11
@@ -38,6 +30,14 @@ getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/server.js	/^function
 getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/server.js	/^function getRandomColor() {$/;"	function	line:82
 extractColorFromTag	/Users/smusso/Dropbox/projects/theme-builder/server.js	/^function extractColorFromTag(tag){$/;"	function	line:91
 extractColorFromTag	/Users/smusso/Dropbox/projects/theme-builder/server.js	/^function extractColorFromTag(tag){$/;"	function	line:91
+.t8-center	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^.t8-center{$/;"	function	line:1
+.t8-label	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^.t8-label{$/;"	function	line:7
+.t8-column	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^.t8-column{$/;"	function	line:15
+.t8-colorPicker	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^.t8-colorPicker{$/;"	function	line:20
+#wrapper	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^#wrapper {$/;"	function	line:24
+#container	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^#container {$/;"	function	line:28
+#workspace	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^#workspace {$/;"	function	line:33
+.arrow-top	/Users/smusso/Dropbox/projects/theme-builder/public/styles.css	/^.arrow-top {$/;"	function	line:39
 l	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var l = 0;$/;"	variable	line:2
 layout	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var layout = $("<div>", {id: "layout"+l, class: "t8-column"});$/;"	variable	line:3
 componentToHex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function componentToHex(c) {$/;"	function	line:5
@@ -48,10 +48,10 @@ invert	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function inv
 invert	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function invert(rgbOriginal) {$/;"	function	line:14
 zIndex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var zIndex = 3;$/;"	variable	line:25
 createColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var createColor = function(data, vars, i){$/;"	function	line:26
-start	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^    start: function(event, ui) { $(this).css("z-index", zIndex++); }$/;"	function	line:55
-move	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^    move: function(color){$/;"	function	line:72
+start	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^    start: function(event, ui) { $(this).css("z-index", zIndex++); }$/;"	function	line:56
+move	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^    move: function(color){$/;"	function	line:77
 createColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var createColor = function(data, vars, i){$/;"	function	line:26
-getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function getRandomColor() {$/;"	function	line:87
-getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function getRandomColor() {$/;"	function	line:87
-pad	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function pad(num, size) {$/;"	function	line:96
-pad	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function pad(num, size) {$/;"	function	line:96
+getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function getRandomColor() {$/;"	function	line:93
+getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function getRandomColor() {$/;"	function	line:93
+pad	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function pad(num, size) {$/;"	function	line:102
+pad	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function pad(num, size) {$/;"	function	line:102

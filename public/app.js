@@ -52,6 +52,7 @@ var createColor = function(data, vars, i){
 
   $("#parent-color"+i).draggable({
     grid: [20, 20],
+    snap: true,
     start: function(event, ui) { $(this).css("z-index", zIndex++); }
   });
 
@@ -66,7 +67,11 @@ var createColor = function(data, vars, i){
   $("#description"+i).css({'color': invert(rdmColor)});
   $("#variable"+i).css({'color': invert(rdmColor)});
 
-  $("#triangle"+i).css({'border-top': '20% solid'+rdmColor});
+  $("#triangle"+i).css({'border-top': '30px solid'+rdmColor});
+  $("#triangle"+i).click(function(){
+      var myColor = $("#triangle"+i).css("border-top-color");
+      $("#parent-color"+i).css({'background-color': myColor});
+  });
 
   $('#color'+i).spectrum({
     move: function(color){
@@ -75,7 +80,8 @@ var createColor = function(data, vars, i){
       console.log(clr);
       console.log('#parent-color'+index);
       $('#parent-color'+index).css({'background-color': clr});
-      $("#description"+index).css({'color': invert(clr)});
+      $("#description"+i).css({'color': invert(clr)});
+      $("#variable"+i).css({'color': invert(clr)});
     },
 
     preferredFormat: "rgb",
