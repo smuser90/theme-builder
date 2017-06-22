@@ -1,3 +1,10 @@
+.all {
+    width: 20%;
+    height: 2%;
+    z-index: 1;
+    position: absolute;
+}
+
 .t8-center{
   background-color: white;
   text-align: center;
@@ -44,4 +51,19 @@
   border-top: 30px solid blue;
   border-bottom: 30px solid transparent;
   border-right: 30px solid transparent;
+}
+
+.ui-selecting {
+  background: #FECA40;
+  margin: 50px;
+}
+
+.ui-selected {
+  background: #FECA40;
+  margin: 50px;
+}
+
+.ui-selectee {
+  background: #FECA40;
+  margin: 50px;
 }

@@ -4,20 +4,21 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+selection	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var selection = [];$/;"	variable	line:1
 l	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var l = 0;$/;"	variable	line:2
 layout	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var layout = $("<div>", {id: "layout"+l, class: "t8-column"});$/;"	variable	line:3
-componentToHex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function componentToHex(c) {$/;"	function	line:5
-componentToHex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function componentToHex(c) {$/;"	function	line:5
-rgbToHex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function rgbToHex(r, g, b) {$/;"	function	line:10
-rgbToHex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function rgbToHex(r, g, b) {$/;"	function	line:10
-invert	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function invert(rgbOriginal) {$/;"	function	line:14
-invert	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function invert(rgbOriginal) {$/;"	function	line:14
-zIndex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var zIndex = 3;$/;"	variable	line:25
-createColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var createColor = function(data, vars, i){$/;"	function	line:26
-start	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^    start: function(event, ui) { $(this).css("z-index", zIndex++); }$/;"	function	line:56
-move	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^    move: function(color){$/;"	function	line:77
-createColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var createColor = function(data, vars, i){$/;"	function	line:26
-getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function getRandomColor() {$/;"	function	line:93
-getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function getRandomColor() {$/;"	function	line:93
-pad	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function pad(num, size) {$/;"	function	line:102
-pad	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function pad(num, size) {$/;"	function	line:102
+componentToHex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function componentToHex(c) {$/;"	function	line:7
+componentToHex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function componentToHex(c) {$/;"	function	line:7
+rgbToHex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function rgbToHex(r, g, b) {$/;"	function	line:12
+rgbToHex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function rgbToHex(r, g, b) {$/;"	function	line:12
+invert	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function invert(rgbOriginal) {$/;"	function	line:16
+invert	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function invert(rgbOriginal) {$/;"	function	line:16
+zIndex	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var zIndex = 3;$/;"	variable	line:27
+createColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var createColor = function(data, vars, i){$/;"	function	line:28
+start	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^    start: function(event, ui) { $(this).css("z-index", zIndex++); }$/;"	function	line:58
+move	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^    move: function(color){$/;"	function	line:113
+createColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^var createColor = function(data, vars, i){$/;"	function	line:28
+getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function getRandomColor() {$/;"	function	line:129
+getRandomColor	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function getRandomColor() {$/;"	function	line:129
+pad	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function pad(num, size) {$/;"	function	line:138
+pad	/Users/smusso/Dropbox/projects/theme-builder/public/app.js	/^function pad(num, size) {$/;"	function	line:138

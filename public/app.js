@@ -1,6 +1,8 @@
-
+var selection = [];
 var l = 0;
 var layout = $("<div>", {id: "layout"+l, class: "t8-column"});
+$('.all').draggable();
+
 
 function componentToHex(c) {
     var hex = c.toString(16);
@@ -56,6 +58,40 @@ var createColor = function(data, vars, i){
     start: function(event, ui) { $(this).css("z-index", zIndex++); }
   });
 
+  $("#parent-color"+i).dblclick(function(){
+    var data = $(this).data('clicked');
+    var all = $('.all');
+
+    if(data == undefined || data == false){
+        selection.push(this);
+        $(this).data('clicked', true);
+        this.style.border = '3px solid white';
+        $(this).draggable('disable');
+
+        $('.all').append($(this));
+    }
+    else {
+
+        $(this).data('clicked', false);
+        this.style.border = '3px solid black';
+        $(this).draggable('enable');
+
+        console.dir(selection);
+
+        var len = selection.length;
+        var reverse = [];
+        for (var i=0; i < len; i++){
+          reverse.push(selection.pop());
+        }
+
+        for (var i=0; i < len; i++){
+            var child = reverse.pop();
+            $(child).detach();
+            $('#layout'+l).append(child);
+        }
+      }
+  });
+
   $("#parent-color"+i).append(triangle);
   $("#parent-color"+i).append(clr);
   $("#parent-color"+i).append(dsc);
@@ -67,7 +103,7 @@ var createColor = function(data, vars, i){
   $("#description"+i).css({'color': invert(rdmColor)});
   $("#variable"+i).css({'color': invert(rdmColor)});
 
-  $("#triangle"+i).css({'border-top': '30px solid'+rdmColor});
+  $("#triangle"+i).css({'border-top': '30px solid '+rdmColor});
   $("#triangle"+i).click(function(){
       var myColor = $("#triangle"+i).css("border-top-color");
       $("#parent-color"+i).css({'background-color': myColor});
@@ -113,6 +149,9 @@ $( document ).ready( function() {
       for(var i = 0; i < data.length; i++){
           createColor(data, vars, i);
       }
+
+      $('.sp-replacer').css('display','none');
+
     })
   })
 });
